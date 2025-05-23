@@ -24,7 +24,7 @@ body {
     font-family: var(--fonte-padrao);
 }
 
-.navbar {
+.nav-bar {
     background-color: var(--preto);
     box-shadow: 0px 0px 10px 10px var(--preto);
     position: fixed;
@@ -40,18 +40,18 @@ body {
     width: 80px;
 }
 
-.mobile-menu {
+.menu-mobile {
     cursor: pointer;
     display: none;
 }
 
-.mobile-menu div {
+.menu-mobile div {
     transition: 0.4s ease;
 }
 
 /* Versão mobile */
 @media (max-width: 768px) {
-    .mobile-menu {
+    .menu-mobile {
         cursor: pointer;
         display: block;
         left: 80vw;
@@ -59,7 +59,7 @@ body {
         top: 1vh;
     }
 
-    .mobile-menu div {
+    .menu-mobile div {
         background: var(--branco);
         height: 2px;
         margin: 8px;
@@ -67,11 +67,11 @@ body {
         width: 32px;
     }
 
-    .mobile-menu div:hover {
+    .menu-mobile div:hover {
         transition: 0.4s ease;
     }
 
-    .nav-list {
+    .lista-nav {
         align-items: center;
         background: var(--preto);
         border-radius: 0px 50px;
@@ -88,11 +88,11 @@ body {
         width: 33vw;
     }
 
-    .nav-list li {
+    .lista-nav li {
         opacity: 0;
     }
 
-    .nav-list.active {
+    .lista-nav.active {
         transform: translateX(0);
     }
 
@@ -108,15 +108,15 @@ body {
         }
     }
 
-    .mobile-menu.active .line1 {
+    .menu-mobile.active .linha-1 {
         transform: rotate(-40deg) translate(-8px, 8px);
     }
 
-    .mobile-menu.active .line2 {
+    .menu-mobile.active .linha-2 {
         opacity: 0;
     }
 
-    .mobile-menu.active .line3 {
+    .menu-mobile.active .linha-3 {
         transform: rotate(40deg) translate(-5px, -7px);
     }
 }

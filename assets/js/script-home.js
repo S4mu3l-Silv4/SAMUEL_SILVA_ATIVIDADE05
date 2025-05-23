@@ -1,33 +1,33 @@
-// Navbar com scroll inteligente:
+// Nav bar com scroll inteligente:
 
-let lastScrollTop = 0
-const navbar = document.getElementById("navbar")
+let ultimoScrollTop = 0
+const navBar = document.getElementById("nav-bar")
 
 window.addEventListener("scroll", function () {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop
 
-    if (scrollTop > lastScrollTop) {
-        navbar.style.top = "-70px"
+    if (scrollTop > ultimoScrollTop) {
+        navBar.style.top = "-55px"
     } else {
-        navbar.style.top = "0"
+        navBar.style.top = "0"
     }
 
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop
+    ultimoScrollTop = scrollTop <= 0 ? 0 : scrollTop
 })
 
-// Navbar hambúrguer em telas mobile:
+// Nav bar hambúrguer em telas mobile:
 
-class MobileNavbar {
-    constructor(mobileMenu, navList, navLinks) {
-        this.mobileMenu = document.querySelector(mobileMenu)
-        this.navList = document.querySelector(navList)
-        this.navLinks = document.querySelectorAll(navLinks)
+class navBarMobile {
+    constructor(menuMobile, listaNav, linksNav) {
+        this.menuMobile = document.querySelector(menuMobile)
+        this.listaNav = document.querySelector(listaNav)
+        this.linksNav = document.querySelectorAll(linksNav)
         this.activeClass = "active"
-        this.handleClick = this.handleClick.bind(this)
+        this.tratoClick = this.tratoClick.bind(this)
     }
 
-    animateLinks() {
-        this.navLinks.forEach((link, index) => {
+    linksAnimados() {
+        this.linksNav.forEach((link, index) => {
             link.style.animation
                 ? (link.style.animation = "")
                 : (link.style.animation = `navLinkFade 0.5s ease forwards ${
@@ -36,66 +36,66 @@ class MobileNavbar {
         })
     }
 
-    handleClick() {
-        this.navList.classList.toggle(this.activeClass)
-        this.mobileMenu.classList.toggle(this.activeClass)
-        this.animateLinks()
+    tratoClick() {
+        this.listaNav.classList.toggle(this.activeClass)
+        this.menuMobile.classList.toggle(this.activeClass)
+        this.linksAnimados()
     }
 
-    addClickEvent() {
-        this.mobileMenu.addEventListener("click", this.handleClick)
+    eventoClick() {
+        this.menuMobile.addEventListener("click", this.tratoClick)
     }
 
     init() {
-        if (this.mobileMenu) {
-            this.addClickEvent()
+        if (this.menuMobile) {
+            this.eventoClick()
         }
         return this
     }
 }
 
-const mobileNavbar = new MobileNavbar(
-    ".mobile-menu",
-    ".nav-list",
-    ".nav-list li",
+const navBarMobile = new navBarMobile(
+    ".menu-mobile",
+    ".lista-nav",
+    ".lista-nav li",
 )
-mobileNavbar.init()
+navBarMobile.init()
 
 // Carrossel de imagens:
 
 const carrossel = document.querySelectorAll('.slider')
-const botao_voltar = document.getElementById('botao-voltar')
-const botao_avancar = document.getElementById('botao-avancar')
+const botaoVoltar = document.getElementById('botao-voltar')
+const botaoAvancar = document.getElementById('botao-avancar')
 
-let imagem_atual = 0
+let imagemAtual = 0
 
-function esconder_imagem() {
+function esconderImagem() {
     carrossel.forEach(item => item.classList.remove('on'))
 }
 
-function mostrar_imagem() {
-    carrossel[imagem_atual].classList.add('on')
+function mostrarImagem() {
+    carrossel[imagemAtual].classList.add('on')
 }
 
-function voltar_imagem() {
-    esconder_imagem()
-    if(imagem_atual === 0) {
-        imagem_atual = carrossel.length -1
+function voltarImagem() {
+    esconderImagem()
+    if(imagemAtual === 0) {
+        imagemAtual = carrossel.length -1
     } else {
-        imagem_atual--
+        imagemAtual--
     }
-    mostrar_imagem()
+    mostrarImagem()
 }
 
-function avancar_imagem() {
-    esconder_imagem()
-    if(imagem_atual === carrossel.length -1) {
-        imagem_atual = 0
+function avancarImagem() {
+    esconderImagem()
+    if(imagemAtual === carrossel.length -1) {
+        imagemAtual = 0
     } else {
-        imagem_atual++
+        imagemAtual++
     }
-    mostrar_imagem()
+    mostrarImagem()
 }
 
-botao_voltar.addEventListener('click', voltar_imagem)
-botao_avancar.addEventListener('click', avancar_imagem)
+botaoVoltar.addEventListener('click', voltarImagem)
+botaoAvancar.addEventListener('click', avancarImagem)
