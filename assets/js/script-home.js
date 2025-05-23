@@ -15,7 +15,7 @@ window.addEventListener("scroll", function () {
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop
 })
 
-// Menu hambúrguer em telas versão mobile:
+// Navbar hambúrguer em telas mobile:
 
 class MobileNavbar {
     constructor(mobileMenu, navList, navLinks) {
