@@ -64,38 +64,38 @@ mobileNavbar.init()
 // Carrossel de imagens:
 
 const carrossel = document.querySelectorAll('.slider')
-const botao_voltar = document.getElementById('botao-voltar')
-const botao_avancar = document.getElementById('botao-avancar')
+const botaoVoltar = document.getElementById('botao-voltar')
+const botaoAvancar = document.getElementById('botao-avancar')
 
-let imagem_atual = 0
+let imagemAtual = 0
 
-function esconder_imagem() {
+function esconderImagem() {
     carrossel.forEach(item => item.classList.remove('on'))
 }
 
-function mostrar_imagem() {
-    carrossel[imagem_atual].classList.add('on')
+function mostrarImagem() {
+    carrossel[imagemAtual].classList.add('on')
 }
 
-function voltar_imagem() {
-    esconder_imagem()
-    if(imagem_atual === 0) {
-        imagem_atual = carrossel.length -1
+function voltarImagem() {
+    esconderImagem()
+    if(imagemAtual === 0) {
+        imagemAtual = carrossel.length -1
     } else {
-        imagem_atual--
+        imagemAtual--
     }
-    mostrar_imagem()
+    mostrarImagem()
 }
 
-function avancar_imagem() {
-    esconder_imagem()
-    if(imagem_atual === carrossel.length -1) {
-        imagem_atual = 0
+function avancarImagem() {
+    esconderImagem()
+    if(imagemAtual === carrossel.length -1) {
+        imagemAtual = 0
     } else {
-        imagem_atual++
+        imagemAtual++
     }
-    mostrar_imagem()
+    mostrarImagem()
 }
 
-botao_voltar.addEventListener('click', voltar_imagem)
-botao_avancar.addEventListener('click', avancar_imagem)
+botaoVoltar.addEventListener('click', voltarImagem)
+botaoAvancar.addEventListener('click', avancarImagem)
