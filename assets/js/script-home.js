@@ -55,9 +55,9 @@ class MobileNavbar {
 }
 
 const mobileNavbar = new MobileNavbar(
-    ".mobile-menu",
-    ".nav-list",
-    ".nav-list li",
+    ".menu-mobile",
+    ".lista-nav",
+    ".lista-nav li",
 )
 mobileNavbar.init()
 
