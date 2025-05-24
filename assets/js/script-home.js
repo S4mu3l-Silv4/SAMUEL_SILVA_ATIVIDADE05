@@ -17,49 +17,49 @@ window.addEventListener("scroll", function () {
 
 // Nav bar hambúrguer em telas mobile:
 
-class MobileNavbar {
-    constructor(mobileMenu, navList, navLinks) {
-        this.mobileMenu = document.querySelector(mobileMenu)
-        this.navList = document.querySelector(navList)
-        this.navLinks = document.querySelectorAll(navLinks)
-        this.activeClass = "active"
-        this.handleClick = this.handleClick.bind(this)
+class navBarMobile {
+    constructor(menuMobile, listaNav, linksNav) {
+        this.menuMobile = document.querySelector(menuMobile)
+        this.listaNav = document.querySelector(listaNav)
+        this.linksNav = document.querySelectorAll(linksNav)
+        this.classeAtiva = "ativa"
+        this.toqueClick = this.toqueClick.bind(this)
     }
 
-    animateLinks() {
-        this.navLinks.forEach((link, index) => {
+    linksAnimados() {
+        this.linksNav.forEach((link, index) => {
             link.style.animation
                 ? (link.style.animation = "")
-                : (link.style.animation = `navLinkFade 0.5s ease forwards ${
+                : (link.style.animation = `linkNavOpaco 0.3s ease forwards ${
                     index / 7 + 0.3
                 }s`)
         })
     }
 
-    handleClick() {
-        this.navList.classList.toggle(this.activeClass)
-        this.mobileMenu.classList.toggle(this.activeClass)
-        this.animateLinks()
+    toqueClick() {
+        this.listaNav.classList.toggle(this.classeAtiva)
+        this.menuMobile.classList.toggle(this.classeAtiva)
+        this.linksAnimados()
     }
 
-    addClickEvent() {
-        this.mobileMenu.addEventListener("click", this.handleClick)
+    eventoClick() {
+        this.menuMobile.addEventListener("click", this.toqueClick)
     }
 
-    init() {
-        if (this.mobileMenu) {
-            this.addClickEvent()
+    inicializar() {
+        if (this.menuMobile) {
+            this.eventoClick()
         }
         return this
     }
 }
 
-const mobileNavbar = new MobileNavbar(
+const navBarMobileFalsa = new navBarMobile(
     ".menu-mobile",
     ".lista-nav",
     ".lista-nav li",
 )
-mobileNavbar.init()
+navBarMobileFalsa.inicializar()
 
 // Carrossel de imagens:
 

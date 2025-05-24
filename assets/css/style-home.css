@@ -92,11 +92,11 @@ body {
         opacity: 0;
     }
 
-    .lista-nav.active {
+    .lista-nav.ativa {
         transform: translateX(0);
     }
 
-    @keyframes navLinkFade {
+    @keyframes linkNavOpaco {
         from {
             opacity: 0;
             transform: translateX(50px);
@@ -108,15 +108,15 @@ body {
         }
     }
 
-    .menu-mobile.active .linha-1 {
+    .menu-mobile.ativa .linha-1 {
         transform: rotate(-40deg) translate(-8px, 8px);
     }
 
-    .menu-mobile.active .linha-2 {
+    .menu-mobile.ativa .linha-2 {
         opacity: 0;
     }
 
-    .menu-mobile.active .linha-3 {
+    .menu-mobile.ativa .linha-3 {
         transform: rotate(40deg) translate(-5px, -7px);
     }
 }
