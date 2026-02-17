@@ -34,7 +34,7 @@
         z-index: 1;
     }
 
-    .team-cherry-logo-1 {
+    .team-cherry-logo {
         float: left;
         height: 60px;
         width: 80px;
@@ -164,20 +164,6 @@
         transition: 0.6s ease;
     }
 
-    .borda {
-        border: solid 1px var(--branco);
-        border-radius: 30px;
-        cursor: pointer;
-        padding: 7px;
-        transition: 0.7s ease;
-    }
-
-    .borda:hover {
-        background-color: var(--branco);
-        color: var(--preto);
-        transition: 0.7s ease;
-    }
-
     main {
         background-image: url(../imgs/imagem-fundo.png);
         background-position: center top 60px;
@@ -249,6 +235,11 @@
         margin-bottom: 30px;
         margin-top: 30px;
         text-align: center;
+    }
+
+    #plataformas {
+        margin-bottom: 0px;
+        margin-top: 180px;
     }
 
     .plataformas {
@@ -438,6 +429,10 @@
         text-align: center;
     }
 
+    #historia {
+        margin-top: 170px;
+    }
+
     .historia {
         display: flex;
         justify-content: space-between;
@@ -598,6 +593,10 @@
         }
     }
 
+    #screenshots {
+        margin-top: 200px;
+    }
+
     .setas-carrossel {
         display: flex;
         gap: 3rem;
@@ -733,12 +732,6 @@
 
     .copyright {
         color: var(--cinza-escuro);
-    }
-
-    .team-cherry-logo-2 {
-        float: right;
-        height: 60px;
-        width: 80px;
     }
 
     footer article {
